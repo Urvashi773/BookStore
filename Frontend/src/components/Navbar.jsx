@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Login from "../components/Login"
+import { useAuth } from "../context/AuthProvider";
+import Logout from "./Logout";
+import Registration from "./Registration";
 
 
 function Navbar() {
+    const[authUser,setAuthUser]=useAuth()
+    console.log(authUser);
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
     const element = document.documentElement;
     useEffect(() => {
@@ -44,7 +49,7 @@ function Navbar() {
                 <a href="/Contact">Contact</a>
             </li>
             <li>
-                <a>About</a>
+                <a href="/AboutUs">About</a>
             </li>
         </>
     )
@@ -79,15 +84,15 @@ function Navbar() {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow dark:text-black"
                             >
                                 {navItems}
                             </ul>
                         </div>
                         <a className="text-2xl font-bold ">BookStore</a>
                     </div>
-                    <div className="navbar-end space-x-3">
-                        <div className="navbar-center hidden lg:flex">
+                    <div className="navbar-end space-x-3 ">
+                        <div className="navbar-center hidden lg:flex ">
                             <ul className="menu menu-horizontal px-1">
                                 {navItems}
                             </ul>
@@ -134,11 +139,21 @@ function Navbar() {
                                 </svg>
                             </label>
                         </div>
-                        <div className="">
+                        {authUser ? (<Logout/>
+                        ):(
+
+                        
+                         <div className="">
                             <a className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
                             onClick={()=>document.getElementById("my_modal_3").showModal()}>Login</a>
                             <Login />
-                        </div>
+                        </div> 
+                    )
+                }
+                 <div className="">
+                           
+                            <Registration />
+                        </div> 
                     </div>
                 </div>
             </div>

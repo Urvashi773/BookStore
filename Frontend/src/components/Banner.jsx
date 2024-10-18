@@ -27,7 +27,7 @@ function Banner() {
             </div>
 
             <div className="order-1 w-full md:w-1/2">
-            <img src={banner} alt='banner image' className='w-95 h-95 mt-4'></img></div>
+            <img src={banner} alt='banner image' className='w-95 h-95 mt-4 md:h-[400px] md:object-inherit'></img></div>
         </div>
         </>
     )
