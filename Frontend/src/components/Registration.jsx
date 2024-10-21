@@ -36,6 +36,7 @@ function Registration() {
                 if (res.data) {
                     toast.success('Successfully SignedUp');
                     localStorage.setItem("Users",JSON.stringify(res.data.user));
+                    closeModal(); 
                     window.location.reload();
                 }
 
@@ -87,8 +88,8 @@ function Registration() {
                         </div>
                         <div className='flex justify-around mt-4'>
                             <button className='bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200'>SignUp</button>
-                            <p>
-                                Not Registered?<button type="button" onClick={openLogin} className=' bg-white text-blue-500 border-none shadow-none cursor-pointer'>Login</button>
+                            <p className=' dark:text-black'>
+                                Already Registered?<button type="button" onClick={openLogin} className=' bg-white text-blue-500 border-none shadow-none cursor-pointer'>Login</button>
                             </p>
                         </div>
                     </form>

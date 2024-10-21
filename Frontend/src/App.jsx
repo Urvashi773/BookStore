@@ -4,12 +4,14 @@ import Home from './components/home/Home'
 import{Navigate, Route,Routes} from "react-router-dom"
 import Courses from './courses/Courses'
 import Signup from './components/Signup'
+import ForgetPassword from './components/ForgetPassword'
 import Login from './components/Login'
 import Contact from './components/Contact'
 import { Toaster } from 'react-hot-toast'
 import { useAuth } from './context/AuthProvider'
 import Registration from './components/Registration'
 import AboutUs from './components/AboutUs'
+import ChangePassword from './components/ChangePassword'
 
 
 function App() {
@@ -26,10 +28,12 @@ function App() {
     <Route path="/" element={<Home/>} />
     <Route path="/Course" element={authUser?<Courses/>:<Navigate to="/Signup"/>}/>
     <Route path="/Signup" element={<Signup/>}/>
+    <Route path="/ForgetPassword" element={<ForgetPassword/>}/>
     <Route path="/Login" element={<Login/>}/>
     <Route path="/Registration" element={<Registration/>}/>
     <Route path="/Contact" element={<Contact/>}/>
     <Route path="/AboutUs" element={<AboutUs/>}/>
+    <Route path="/ChangePassword" element={<ChangePassword/>}/>
    </Routes>
    <Toaster />
    </div>

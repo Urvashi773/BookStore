@@ -3,6 +3,8 @@ import Login from "../components/Login"
 import { useAuth } from "../context/AuthProvider";
 import Logout from "./Logout";
 import Registration from "./Registration";
+import ForgetPassword from "./ForgetPassword";
+import ChangePassword from "./ChangePassword";
 
 
 function Navbar() {
@@ -153,6 +155,8 @@ function Navbar() {
                  <div className="">
                            
                             <Registration />
+                            <ForgetPassword />
+                            <ChangePassword/>
                         </div> 
                     </div>
                 </div>

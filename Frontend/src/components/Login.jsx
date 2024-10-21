@@ -52,6 +52,18 @@ function Login() {
             registrationModal.showModal(); // Open the registration modal
         }
     };
+    const openForgetPassword = () => {
+        closeModal(); // Close the login modal
+        console.log("in open forget password method")
+        const forgetPasswordModal = document.getElementById("my_modal_5"); // Use the ID of the registration modal
+        if (forgetPasswordModal) {
+            forgetPasswordModal.showModal(); // Open the registration modal
+        }
+        else {
+            console.log("ForgetPassword modal not found.");
+        }
+    };
+
 
     return (
         <>
@@ -87,13 +99,14 @@ function Login() {
                                         <AiFillEye size={20} onClick={() => setPasswordVisible(true)} />
                                     )}
                                 </span>
+                                <div className='text-blue-400 mt-2'><span onClick={openForgetPassword} className=' bg-white text-blue-500 border-none shadow-0 cursor-pointer'>Forget Password?</span> </div>
                             </div>
                             </div>
                             <br/>
                        
                         <div className='flex justify-around mt-4'>
                             <button className='bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200'>Login</button>
-                            <p>
+                            <p className=' dark:text-black'>
                                 Not Registered?<span onClick={openRegistration} className=' bg-white text-blue-500 border-none shadow-0 cursor-pointer'>Sign Up</span>
                             </p>
                         </div>
