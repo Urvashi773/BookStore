@@ -8,7 +8,7 @@ function AboutUs() {
      <Navbar />
      <div className="flex flex-col items-center justify-center mx-auto py-16 px-8 max-w-4xl text-center">
       <header className="mb-8">
-        <h1 className="text-5xl font-bold mb-2 flex justify-center  py-20">About Us</h1>
+        <h1 className="text-4xl font-bold mb-2 flex justify-center  py-20">About Us</h1>
         <p className="text-lg font-bold text-pink-600 ">Hello! It's nice to see you here!</p>
       </header>
       <section className="text-xl text-gray-700 leading-relaxed space-y-6 dark:text-white">
